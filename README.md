@@ -1,2 +1,2 @@
 # bryansmMemoryGame
-A cool mamory game in JS
+A cool memory game in JS
