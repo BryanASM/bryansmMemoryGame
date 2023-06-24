@@ -1,9 +1,10 @@
 :root{
-    --primary-color: #263238;
-    --primdary-color-light: #f50057;
-    --primary-color-dark: #f50057;
-    --secondary-color: #f50057;
-    --secondary-color-light: #f50057;
+    --primary-color-dark: #1769aa;
+    --primary-color: #2196f3;
+    --primdary-color-light: #4dabf5;
+    --secondary-color-dark: #b2741a;
+    --secondary-color: #ffa726;
+    --secondary-color-light: #ffb851;
     --background-color:#e4e4e4;
     --navigationContainer-height:60px;
 }
@@ -12,6 +13,17 @@
 h1 {color: var(--primary-color)}
 h2 {color: var(--secondary-color)}
 
+button{
+    min-width: 60px;
+    border-style: none;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
 button:focus{
     outline: none;
 }
@@ -19,18 +31,20 @@ button:focus{
 .mainContainer{
 display: flex;
 flex-direction: column;
-background-color: aquamarine;
+background-color: var(--background-color);
 width: 100vw;
 height: 100vh;
 }
 
+/*uso de variables para estilos de css, se declaran en el root*/
+
 .navigationContainer{
-    background-color: blue;
+    background-color: var(--primary-color);
     width: 100%;
     height: var(--navigationContainer-height);
 
 }
 .contentContainer{
     width: 100%;
-    height: var(--navigationContainer-height);
+    height: calc(100% - var(--navigationContainer-height));
 }
