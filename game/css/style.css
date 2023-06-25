@@ -38,12 +38,7 @@ height: 100vh;
 
 /*uso de variables para estilos de css, se declaran en el root*/
 
-.navigationContainer{
-    background-color: var(--primary-color);
-    width: 100%;
-    height: var(--navigationContainer-height);
 
-}
 .contentContainer{
     width: 100%;
     height: calc(100% - var(--navigationContainer-height));
@@ -61,4 +56,35 @@ height: 100vh;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+/*navigation container css*/
+
+.navigationContainer{
+    background-color: var(--primary-color);
+    width: 100%;
+    height: var(--navigationContainer-height);
+
+}
+
+.navigationContainer-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigationContainer-back-button{
+    width: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.navigationContainer-title{
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
 }
