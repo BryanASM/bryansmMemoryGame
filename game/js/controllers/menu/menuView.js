@@ -1,4 +1,5 @@
 import { View } from "../view.js";
+import { createElement } from "../../libs/html.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
 export class MenuView extends View {
     //Recibe controller
@@ -8,14 +9,11 @@ export class MenuView extends View {
         super(controller, parent);
         this.container.className = 'menuView';
 
-        var loginBtn = document.createElement('div');
-        this.container.appendChild(loginBtn);
-        loginBtn.innerHTML = 'LOGIN';
-        loginBtn.className = 'game-button';
+        var text= createElement('p', {innerHTML:'Hola', className:'menuView_text', id:''}, this.container);
 
-        var playBtn = document.createElement('div');
-        this.container.appendChild(playBtn);
-        playBtn.innerHTML = 'PLAY';
-        playBtn.className = 'game-button';
+        var loginBtn = createElement('div',{innerHTML:'LOGIN', className:'game-button'}, this.container);
+
+        var playBtn = createElement('div',{innerHTML:'LOGIN', className:'game-button'}, this.container);
+
     }
 }
