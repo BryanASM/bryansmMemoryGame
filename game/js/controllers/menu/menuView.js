@@ -13,7 +13,7 @@ export class MenuView extends View {
 
         var loginBtn = createElement('div',{innerHTML:'LOGIN', className:'game-button'}, this.container);
 
-        var playBtn = createElement('div',{innerHTML:'LOGIN', className:'game-button'}, this.container);
+        var playBtn = createElement('div',{innerHTML:'PLAY', className:'game-button'}, this.container);
 
     }
 }
