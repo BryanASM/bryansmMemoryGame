@@ -1,4 +1,12 @@
-export const createElement = function (type, attributes,parent){
+export const div = funciton (attributes, parent) {
+    return createElement('div', attributes, parent);
+}
+
+export const p = funciton (attributes, parent){
+    return createElement('p', attributes, parent);
+}
+
+const createElement = function (type, attributes,parent){
     var element = document.createElement(type)
     parent.appendChild(element);
 
@@ -7,4 +15,4 @@ export const createElement = function (type, attributes,parent){
     }
 
     return element;
-}
+}  
