@@ -12,7 +12,7 @@ export  class MenuController extends Controller{
         //Al 
         this.view = new MenuView(this, parent);
     }
-    goto(){
+    goto(state){
         this.gameManager.goto(state);
     }
 }

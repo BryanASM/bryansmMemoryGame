@@ -1,8 +1,8 @@
-export const div = funciton (attributes, parent) {
+export const div = function (attributes, parent) {
     return createElement('div', attributes, parent);
 }
 
-export const p = funciton (attributes, parent){
+export const p = function (attributes, parent){
     return createElement('p', attributes, parent);
 }
 

@@ -51,11 +51,12 @@ height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    user-select: none;
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
 }
 
 /*navigation container css*/
@@ -84,7 +85,8 @@ height: 100vh;
     font-weight: bold;
     color: white;
     margin-left: 20px;
-
+    cursor: pointer;
+    user-select: none;
 }
 
 .navigationContainer-title{
@@ -92,4 +94,8 @@ height: 100vh;
     font-weight: bold;
     width: 100%;
     text-align: center;
+}
+
+.hidden{
+    display: none;
 }

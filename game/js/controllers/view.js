@@ -1,10 +1,10 @@
-import{div} from "../libs/html.js"
+import { div } from "../libs/constants/html.js";
 
 export class View{
     //Recibe el parent, donde se va a agregar
     constructor(controller, parent){
         //relación de agregación con controller
-        this.controller=controller;
+        this.controller = controller;
         this.parent = parent;
         //Crea un div en el documento html
         //Esto se hereda en menuView con el "extends" y "super"
