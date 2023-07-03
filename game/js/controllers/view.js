@@ -9,10 +9,19 @@ export class View{
         //Crea un div en el documento html
         //Esto se hereda en menuView con el "extends" y "super"
         this.container = div({},this.parent);
+        
+        this.container.style.transform = 'translateX(${window.innerWidth}px)';
         //Se agrega como un child de container
         this.parent.appendChild(this.container);
+        this.show();
     }
     delete(){
         this.parent.removeChild(this.container);
+    }
+    show(){
+        gsap.to(this.container,{x: 0, duration: 0.5});
+    }
+    hide(){
+        gsap.to(this.container,{x: window.innerWidth, duration: 0.5});
     }
 }
