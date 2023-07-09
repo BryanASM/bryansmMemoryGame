@@ -19,9 +19,7 @@ export class GameManager{
 
         this.MenuController=new MenuController(this, this.contentContainer);
 
-
         this.presenting(HOME_STATE);
-
     }
 
     presenting(state){

@@ -20,11 +20,11 @@ export class View{
         this.parent.removeChild(this.container);
     }
     show(){
-        gsap.to(this.container,{x: 0, duration: 0.5});
+        gsap.to(this.container,{x: 0, duration: 0.75, ease: "expo.out"});
     }
     hide(callback, state){
         this.callback=callback;
-        gsap.to(this.container,{x: window.innerWidth, duration: 0.5, onComplete: this.hideComplete.bind(this,state)});
+        gsap.to(this.container,{x: window.innerWidth, duration: 0.5, ease: "expo.in", onComplete: this.hideComplete.bind(this,state)});
     }
     hideComplete(state){
         this.callback(state);
