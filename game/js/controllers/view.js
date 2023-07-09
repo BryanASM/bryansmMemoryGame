@@ -10,7 +10,8 @@ export class View{
         //Esto se hereda en menuView con el "extends" y "super"
         this.container = div({},this.parent);
         
-        this.container.style.transform = 'translateX(${window.innerWidth}px)';
+        this.container.style.transform = `translateX(${window.innerWidth}px)` 
+        this.callback=null;
         //Se agrega como un child de container
         this.parent.appendChild(this.container);
         this.show();
@@ -21,7 +22,11 @@ export class View{
     show(){
         gsap.to(this.container,{x: 0, duration: 0.5});
     }
-    hide(){
-        gsap.to(this.container,{x: window.innerWidth, duration: 0.5});
+    hide(callback, state){
+        this.callback=callback;
+        gsap.to(this.container,{x: window.innerWidth, duration: 0.5, onComplete: this.hideComplete.bind(this,state)});
+    }
+    hideComplete(state){
+        this.callback(state);
     }
 }

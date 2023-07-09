@@ -13,4 +13,8 @@ export class Controller{
     delete(){
         this.view.delete();
     }
+
+    hide(callback){
+        this.view.hide(callback);
+    }
 }

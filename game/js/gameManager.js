@@ -15,22 +15,26 @@ export class GameManager{
         this.navigationContainer = document.getElementById('navigationContainer');
         this.backBtn = document.getElementById('navigationContainer-back-button');
         this.title = document.getElementById('navigationContainer-title');
-        this.goto(HOME_STATE);
-
         this.backBtn.onclick = this.goto.bind(this, HOME_STATE);
+
+        this.MenuController=new MenuController(this, this.contentContainer);
+
+
+        this.presenting(HOME_STATE);
 
     }
 
-    goto(state){
+    presenting(state){
         if (this.controller!==null){
             this.controller.delete();
+            this.controller=null;
         }
         this.backBtn.classList.remove('hidden');
         switch(state){
             case HOME_STATE:
                 this.backBtn.classList.add('hidden');
                 this.title.innerHTML = 'Menu';
-                this.controller = new MenuController(this, this.contentContainer);
+                //this.controller = new MenuController(this, this.contentContainer);
                 break;
             case DIFFICULTY_STATE: 
                 this.title.innerHTML = 'Difficulty';
@@ -58,6 +62,14 @@ export class GameManager{
                 break;
             default:
                 break;
+        }
+    }
+
+    goto(state){
+        if (this.controller!==null){
+            this.controller.hide(this.presenting.bind(this, state));
+        } else{
+            this.   presenting(state);
         }
     }
 }
