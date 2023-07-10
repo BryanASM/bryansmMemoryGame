@@ -21,11 +21,11 @@ export class GameManager{
         this.presenting(HOME_STATE);
 
         this.contentContainer.addEventListener('menu-button-click', (event)=>{
-            this.presenting(event.detail.state)
+            this.presenting(event.detail.state);
         })
 
         this.contentContainer.addEventListener('hide-comnplete', (event)=>{
-            this.presenting(event.detail.state)
+            this.presenting(event.detail.state);
         });
 
     }
