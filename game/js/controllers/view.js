@@ -9,11 +9,8 @@ export class View{
         //Crea un div en el documento html
         //Esto se hereda en menuView con el "extends" y "super"
         this.container = div({},this.parent);
-        
         this.container.style.transform = `translateX(${window.innerWidth}px)` 
-        this.callback=null;
         //Se agrega como un child de container
-        this.parent.appendChild(this.container);
         this.show();
     }
     delete(){
@@ -22,11 +19,18 @@ export class View{
     show(){
         gsap.to(this.container,{x: 0, duration: 0.75, ease: "expo.out"});
     }
-    hide(callback, state){
-        this.callback=callback;
+    hide(state){
         gsap.to(this.container,{x: window.innerWidth, duration: 0.5, ease: "expo.in", onComplete: this.hideComplete.bind(this,state)});
     }
     hideComplete(state){
-        this.callback(state);
+        var event = new CustomEvent('hide-complete',{
+            detail: {
+                state: state,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+        })
+        this.container.dispatchEvent(event);
     }
 }

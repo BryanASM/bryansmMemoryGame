@@ -18,8 +18,16 @@ export class GameManager{
         this.backBtn.onclick = this.goto.bind(this, HOME_STATE);
 
         this.MenuController=new MenuController(this, this.contentContainer);
-
         this.presenting(HOME_STATE);
+
+        this.contentContainer.addEventListener('menu-button-click', (event)=>{
+            this.presenting(event.detail.state)
+        })
+
+        this.contentContainer.addEventListener('hide-comnplete', (event)=>{
+            this.presenting(event.detail.state)
+        });
+
     }
 
     presenting(state){
@@ -65,9 +73,9 @@ export class GameManager{
 
     goto(state){
         if (this.controller!==null){
-            this.controller.hide(this.presenting.bind(this, state));
+            this.controller.hide(state);
         } else{
-            this.   presenting(state);
+            this.presenting(state);
         }
     }
 }

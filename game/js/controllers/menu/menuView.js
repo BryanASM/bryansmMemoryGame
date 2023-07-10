@@ -18,7 +18,16 @@ export class MenuView extends View {
         var difficultyBtn = div({innerHTML:'DIFFICULTY', className:'game-button', onclick: this.onButtonClick.bind(this, DIFFICULTY_STATE)}, this.container);
         var scoresBtn = div({innerHTML:'SCORES', className:'game-button', onclick: this.onButtonClick.bind(this, SCORES_STATE)}, this.container);
     }
-    onButtonClick(state, event){
-        this.controller.goto(state);
+    onButtonClick(state){
+        //this.controller.goto(state);
+        var event = new CustomEvent('menu-button-click',{
+            detail: {
+                state: state,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+        });
+        this.container.dispatchEvent(event);
     }
 }
