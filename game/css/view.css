@@ -1,0 +1,10 @@
+.view-fadeContainer{ 
+    width: 100%;
+    height: 100%;
+    background-color: --fade-color;
+}
+
+.view-elementsContainer{
+    width: 100%;
+    height: 100%;
+}

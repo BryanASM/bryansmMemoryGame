@@ -1,17 +1,17 @@
 :root{
-    --primary-color-dark: #1769aa;
-    --primary-color: #2196f3;
-    --primdary-color-light: #4dabf5;
-    --secondary-color-dark: #b2741a;
-    --secondary-color: #ffa726;
-    --secondary-color-light: #ffb851;
-    --background-color:#e4e4e4;
+    --primary-color-dark: #181a27;
+    --primary-color: #292C44;
+    --primdary-color-light: #404469;
+    --secondary-color-dark: #c23e37;
+    --secondary-color: #FF5349;
+    --secondary-color-light: #fb6d66;
+    --background-color:#18CDCA;
     --navigationContainer-height:60px;
+    --fade-color:rgb(0,0,0,0);
 }
 
 *{padding:0; margin:0;font-family: Arial, Helvetica, sans-serif; }
-h1 {color: var(--primary-color)}
-h2 {color: var(--secondary-color)}
+
 
 button{
     min-width: 60px;
@@ -24,11 +24,8 @@ button{
     outline: none;
 }
 
-button:focus{
-    outline: none;
-}
-
 .mainContainer{
+position: fixed;
 display: flex;
 flex-direction: column;
 background-color: var(--background-color);
@@ -37,8 +34,6 @@ height: 100vh;
 }
 
 /*uso de variables para estilos de css, se declaran en el root*/
-
-
 .contentContainer{
     width: 100%;
     height: calc(100% - var(--navigationContainer-height));
@@ -57,31 +52,35 @@ height: 100vh;
     margin-top: 10px;
     cursor: pointer;
     user-select: none;
+    color:white
 }
 
 /*navigation container css*/
 
 .navigationContainer{
+    position: fixed;
     background-color: var(--primary-color);
     width: 100%;
     height: var(--navigationContainer-height);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    z-index: 100;
 }
 
-.navigationContainer-content{
+/*.navigationContainer-content{
+    position: fixed;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
+}*/
 
 .navigationContainer-back-button{
     position: fixed;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color: white;
     margin-left: 20px;
@@ -90,12 +89,14 @@ height: 100vh;
 }
 
 .navigationContainer-title{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     width: 100%;
     text-align: center;
+    color: aliceblue;
 }
 
 .hidden{
     display: none;
 }
+ 

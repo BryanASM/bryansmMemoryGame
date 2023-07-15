@@ -6,6 +6,6 @@ export class PlayView extends View {
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 
         para no repetir los elementos creados "el div llamado Container", el que está en controller*/
         super(controller, parent);
-        this.container.className = 'playView';
+        this.elementsContainer.className = 'playView';
     }
 }

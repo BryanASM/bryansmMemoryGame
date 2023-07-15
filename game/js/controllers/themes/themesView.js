@@ -6,20 +6,20 @@ export class ThemesView extends View {
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 
         para no repetir los elementos creados "el div llamado Container", el que está en controller*/
         super(controller, parent);
-        this.container.className = 'themesView';
+        this.elementsContainer.className = 'themesView';
 
         var foodBtn = document.createElement('div');
-        this.container.appendChild(foodBtn);
+        this.elementsContainer.appendChild(foodBtn);
         foodBtn.innerHTML = 'FOOD';
         foodBtn.className = 'game-button';
 
         var facesBtn = document.createElement('div');
-        this.container.appendChild(facesBtn);
+        this.elementsContainer.appendChild(facesBtn);
         facesBtn.innerHTML = 'FACES';
         facesBtn.className = 'game-button';
 
         var flagsBtn = document.createElement('div');
-        this.container.appendChild(flagsBtn);
+        this.elementsContainer.appendChild(flagsBtn);
         flagsBtn.innerHTML = 'FLAGS';
         flagsBtn.className = 'game-button';
     }

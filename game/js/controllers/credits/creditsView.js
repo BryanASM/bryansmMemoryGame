@@ -6,10 +6,10 @@ export class CreditsView extends View {
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 
         para no repetir los elementos creados "el div llamado Container", el que está en controller*/
         super(controller, parent);
-        this.container.className = 'creditsView';
+        this.elementsContainer.className = 'creditsView';
 
         var text = document.createElement('p');
-        this.container.appendChild(text);
+        this.elementsContainer.appendChild(text);
         text.innerHTML = 'Add credits here.';
     }
 }

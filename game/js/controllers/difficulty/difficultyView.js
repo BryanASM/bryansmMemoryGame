@@ -6,21 +6,24 @@ export class DifficultyView extends View {
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 
         para no repetir los elementos creados "el div llamado Container", el que está en controller*/
         super(controller, parent);
-        this.container.className = 'difficultyView';
-
+        this.elementsContainer.className = 'difficultyView';
+        //div({},this.elementsContainer);
         var easyBtn = document.createElement('div');
-        this.container.appendChild(easyBtn);
+        this.elementsContainer.appendChild(easyBtn);
         easyBtn.innerHTML = 'EASY';
         easyBtn.className = 'game-button';
 
         var mediumBtn = document.createElement('div');
-        this.container.appendChild(mediumBtn);
+        this.elementsContainer.appendChild(mediumBtn);
         mediumBtn.innerHTML = 'MEDIUM';
         mediumBtn.className = 'game-button';
 
         var hardBtn = document.createElement('div');
-        this.container.appendChild(hardBtn);
+        this.elementsContainer.appendChild(hardBtn);
         hardBtn.innerHTML = 'HARD';
         hardBtn.className = 'game-button';
+    }
+    onButtonCLick(event){
+
     }
 }
