@@ -20,7 +20,6 @@ export class MenuView extends View {
         var creditsBtn = div({innerHTML:'CREDITS', className:'game-button', onclick: this.onButtonClick.bind(this, CREDITS_STATE)}, buttonsContainer);
     }
     onButtonClick(state){
-        //this.controller.goto(state);
         var event = new CustomEvent('menu-button-click',{
             detail: {
                 state: state,

@@ -1,3 +1,5 @@
+import { THEMES_FACES, THEMES_FLAGS, THEMES_FOOD } from "../../libs/constants/constants.js";
+import { div } from "../../libs/constants/html.js";
 import { View } from "../view.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
 export class ThemesView extends View {
@@ -8,19 +10,22 @@ export class ThemesView extends View {
         super(controller, parent);
         this.elementsContainer.className = 'themesView';
 
-        var foodBtn = document.createElement('div');
-        this.elementsContainer.appendChild(foodBtn);
-        foodBtn.innerHTML = 'FOOD';
-        foodBtn.className = 'game-button';
+        div({innerHTML:'FACES',className: 'game-button', onclick: this.onButtonCLick.bind(this, THEMES_FACES)},this.elementsContainer);
 
-        var facesBtn = document.createElement('div');
-        this.elementsContainer.appendChild(facesBtn);
-        facesBtn.innerHTML = 'FACES';
-        facesBtn.className = 'game-button';
+        div({innerHTML:'FOOD',className: 'game-button', onclick: this.onButtonCLick.bind(this, THEMES_FOOD)},this.elementsContainer);
 
-        var flagsBtn = document.createElement('div');
-        this.elementsContainer.appendChild(flagsBtn);
-        flagsBtn.innerHTML = 'FLAGS';
-        flagsBtn.className = 'game-button';
+        div({innerHTML:'FLAGS',className: 'game-button', onclick: this.onButtonCLick.bind(this, THEMES_FLAGS)},this.elementsContainer);
+
+    }
+    onButtonCLick(theme){
+        var event = new CustomEvent('save-theme',{
+            detail: {
+                theme: theme,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+        });
+        this.container.dispatchEvent(event);
     }
 }

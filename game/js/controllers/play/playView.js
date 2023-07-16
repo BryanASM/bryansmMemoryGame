@@ -8,4 +8,7 @@ export class PlayView extends View {
         super(controller, parent);
         this.elementsContainer.className = 'playView';
     }
+    showCards(cards){
+        console.log(cards);
+    }
 }
