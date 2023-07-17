@@ -1,4 +1,4 @@
-import { div } from "../libs/constants/html.js";
+import { div } from "../libs/html.js";
 
 export class View{
     //Recibe el parent, donde se va a agregar

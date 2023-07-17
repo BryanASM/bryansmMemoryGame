@@ -1,25 +1,28 @@
+import { Card } from "../../models/card.js";
 export class PlayService{
     constructor(controller){
         this.controller= controller;
-
     }
 
-    getCards(){
+    getCards(difficulty,theme){
         var cards = [];
-        var url = '../../../data/cards.json';
+        //var url = '../../../data/cards.json';
+        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${difficulty}/type/${theme}`;
         var request = new XMLHttpRequest();
         request.open('get',url);
         request.onload = () => {
             if (request.status === 200){
                 var data = JSON.parse(request.response);
-                console.log(data);
+                data.cards.forEach(cardData => {
+                    var card = new Card(cardData.id, cardData.icon);
+                    cards.push(card); 
+                });
             }else{
                 console.error('Error Requesting cards'); 
             }
+            this.controller.showCards(cards);
         }
         request.send();
-
-        this.controller.showCards(cards);
     }
     sendScore(){
 

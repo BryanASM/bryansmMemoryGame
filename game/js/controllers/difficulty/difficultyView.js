@@ -1,5 +1,5 @@
 import { DIFFICULTY_EASY, DIFFICULTY_MEDIUM,DIFFICULTY_HARD  } from "../../libs/constants/constants.js";
-import { div } from "../../libs/constants/html.js";
+import { div } from "../../libs/html.js";
 import { View } from "../view.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
 export class DifficultyView extends View {
