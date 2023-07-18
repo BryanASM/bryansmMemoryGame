@@ -21,14 +21,13 @@ export class GameManager{
         this.backBtn.onclick = this.goto.bind(this, HOME_STATE);
 
         this.MenuController=new MenuController(this, this.contentContainer);
-        this.presenting(PLAY_STATE);
-
+        
         //console.dir(this.contentContainer);
-
+        
         this.contentContainer.addEventListener('menu-button-click', (event)=>{
             this.presenting(event.detail.state);
         });
-
+        
         this.contentContainer.addEventListener('hide-complete', (event)=>{
             this.presenting(event.detail.state);
         });
@@ -40,11 +39,21 @@ export class GameManager{
             this.theme = event.detail.theme;
             this.saveTheme();
         });
-
+        
+        this.contentContainer.addEventListener('username-entered',(event)=>{
+            this.username = event.detail.username;
+            this.saveUsername ();
+            this.goto(HOME_STATE);
+        })
+        
+        
         this.loadDifficulty();
+        this.loadTheme();
+        this.loadUsername();
 
+        this.presenting(PLAY_STATE);
     }
-
+    
     presenting(state){
         if (this.controller!==null){
             this.controller.delete();
@@ -110,6 +119,17 @@ export class GameManager{
     }
     saveTheme(){
         localStorage.setItem('theme',this.theme);
+    }
+
+    saveUsername(){
+        localStorage.setItem('username', this.username);
+    }
+
+    loadUsername(){
+        if(localStorage.getItem('username')){
+            this.username = localStorage.getItem('username');
+            console.log('USERNAME: ', this.username);
+        }
     }
 
 }
