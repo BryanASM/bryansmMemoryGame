@@ -1,9 +1,9 @@
 import { CREDITS_STATE, DIFFICULTY_STATE, THEMES_STATE, LOGIN_STATE, PLAY_STATE, SCORES_STATE } from "../../libs/constants/constants.js";
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 import { div, img, p } from "../../libs/html.js";
 
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
-export class MenuView extends View {
+export class MenuView extends ControllerView {
     //Recibe controller
     constructor(controller, parent){
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 

@@ -1,6 +1,6 @@
-import { View } from "../view.js";
+import { ControllerView } from "../controllerView.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
-export class ScoresView extends View {
+export class ScoresView extends ControllerView {
     //Recibe controller
     constructor(controller, parent){
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 

@@ -1,7 +1,8 @@
 import { div, p } from "../../libs/html.js";
-import { View } from "../view.js";
+import { CardView } from "../../views/cardView.js";
+import { ControllerView } from "../controllerView.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
-export class PlayView extends View {
+export class PlayView extends ControllerView {
     //Recibe controller
     constructor(controller, parent){
          /*Llamar a la clase base "Padre" relacion de herencia, y recibimos el controller, 
@@ -19,9 +20,8 @@ export class PlayView extends View {
     
     showCards(cards){
         this.cardsContainer.innerHTML='',
-        console.log(cards);
         cards.forEach(card => {
-            div({innerHTML:card.icon, className:'card'}, this.cardsContainer);
+            let carView = new CardView(this.cardsContainer, card);
         });
     }
 

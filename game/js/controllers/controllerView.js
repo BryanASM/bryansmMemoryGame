@@ -1,18 +1,19 @@
 import { div } from "../libs/html.js";
+import { View } from "../views/view.js";
 
-export class View{
+export class ControllerView extends View{
     //Recibe el parent, donde se va a agregar
     constructor(controller, parent){
+        super(parent);
         //relación de agregación con controller
         this.controller = controller;
-        this.parent = parent;
         //Crea un div en el documento html
         //Esto se hereda en menuView con el "extends" y "super"
         this.container = div({},this.parent);
 
         //Nuevos elementos creados
-        this.fadeContainer = div({ className: 'view-fadeContainer'}, this.container);
-        this.elementsContainer = div({ className: 'view-elementsContainer'}, this.container);
+        this.fadeContainer = div({ className: 'controllerView-fadeContainer'}, this.container);
+        this.elementsContainer = div({ className: 'controllerView-elementsContainer'}, this.container);
         this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)`;
 
         //Se agrega como un child de container

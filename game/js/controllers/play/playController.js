@@ -19,6 +19,11 @@ export class PlayController extends Controller{
         this.timer = null;
         this.time = 0;
         this.clicks = 0;
+
+        window.addEventListener('card-selected',(event)=>{
+            this.onCardSelected();
+        });
+        this.view.container.addEventListener('card-selected', this.onCardSelected.bind(this));
     }
     showCards(cards){
         this.cards = cards;
@@ -38,5 +43,45 @@ export class PlayController extends Controller{
     gameTick(){
         this.time +=1;
         this.view.updateHUD(this.clicks, this.time);
+    }
+
+    onCardSelected(){
+        var event = new CustomEvent('show-card-on-selected',{
+            detail: {
+                test: 9,
+            },
+            bubbles: true,
+            cancelable: true,
+            composed: false,
+        });
+        this.view.container.dispatchEvent(event);
+        
+        let cardSelected1 = null;
+        let cardSelected2 = null;
+
+        this.cards.forEach(card => {
+            /*if(!card.isDiscovered){*/
+                if(cardSelected1 === null && card.isSelected){
+                    cardSelected1 = card;
+                    console.log(card);
+                } else if (cardSelected2 === null && card.isSelected){
+                    cardSelected2 = card;
+                }
+            /*}*/
+        });
+
+        if(cardSelected1 !== null && cardSelected2 !== null){
+            if(cardSelected1.id === cardSelected2.id){
+                var event = new CustomEvent('show-card-on-discovered',{
+                    detail: {
+                        card: null,
+                    },
+                    bubbles: true,
+                    cancelable: true,
+                    composed: false,
+                });
+                this.view.container.dispatchEvent(event);
+            }
+        }
     }
 }
