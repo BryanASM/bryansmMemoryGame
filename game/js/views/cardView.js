@@ -1,28 +1,28 @@
 import { div } from "../libs/html.js";
 import { View } from "./view.js";
 
-export class CardView extends View{
-    constructor(parent, card){
+export class CardView extends View {
+    constructor(parent, card) {
         super(parent);
         this.card = card;
         this.container.className = 'cardView-container';
-        this.iconContainer = div({className:'cardView cardView-hidden'}, this.container);
+        this.iconContainer = div({ className: 'cardView cardView-hidden' }, this.container);
         this.container.onclick = this.onSelected.bind(this);
-          
-        window.addEventListener('show-card-on-selected', (event)=>{
+
+        window.addEventListener('show-card-on-selected', (event) => {
             this.showOnSelected();
         });
 
-        window.addEventListener('show-card-on-discovered', (event)=>{
+        window.addEventListener('show-card-on-discovered', (event) => {
             this.showOnDiscovered();
         });
         this.iconContainer.innerHTML = this.card.icon;
     }
 
-    onSelected(){
+    onSelected() {
         this.card.isSelected = true;
 
-        var event = new CustomEvent('card-selected',{
+        var event = new CustomEvent('card-selected', {
             detail: {
                 card: this.card,
             },
@@ -33,7 +33,8 @@ export class CardView extends View{
         this.container.dispatchEvent(event);
 
     }
-    showOnSelected(){
+
+    showOnSelected() {
         if (this.card.isSelected) {
             this.iconContainer.innerHTML = this.card.icon;
             this.iconContainer.classList.remove('cardView-hidden');
@@ -41,15 +42,13 @@ export class CardView extends View{
         }
     }
 
-    showOnDiscovered(){
-        this.card.isDiscovered = true;
-        if(this.card.isSelected/* && !this.card.isDiscovered*/){
-            
+    showOnDiscovered() {
+        if (this.card.isSelected && !this.card.isDiscovered) {
+            this.card.isDiscovered = true;
             this.iconContainer.classList.remove('cardView-hidden');
             this.iconContainer.classList.remove('cardView-selected');
             this.iconContainer.classList.add('cardView-discovered');
             this.container.onclick = null;
         }
     }
-
 }
