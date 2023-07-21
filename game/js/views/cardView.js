@@ -16,7 +16,10 @@ export class CardView extends View {
         window.addEventListener('show-card-on-discovered', (event) => {
             this.showOnDiscovered();
         });
-        this.iconContainer.innerHTML = this.card.icon;
+        
+        window.addEventListener('hide-selected-card',(event)=>{
+            this.hide();
+        });
     }
 
     onSelected() {
@@ -49,6 +52,14 @@ export class CardView extends View {
             this.iconContainer.classList.remove('cardView-selected');
             this.iconContainer.classList.add('cardView-discovered');
             this.container.onclick = null;
+        }
+    }
+    hide(){
+        if (this.card.isSelected && !this.card.isDiscovered) {
+            this.card.isSelected = false;
+            this.iconContainer.innerHTML = '';
+            this.iconContainer.classList.add('cardView-hidden');
+            this.iconContainer.classList.remove('cardView-selected');
         }
     }
 }

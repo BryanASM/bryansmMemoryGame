@@ -23,8 +23,9 @@ export class PlayController extends Controller {
         window.addEventListener('card-selected', (event) => {
             this.onCardSelected();
         });
-        this.view.container.addEventListener('card-selected', this.onCardSelected.bind(this));
+        this.hiddenTimer = null;
     }
+
     showCards(cards) {
         this.cards = cards;
         this.view.showCards(cards);
@@ -46,6 +47,9 @@ export class PlayController extends Controller {
     }
 
     onCardSelected() {
+
+        if(this.hiddenTimer !== null) return;
+
         var event = new CustomEvent('show-card-on-selected', {
             detail: {
                 test: 9,
@@ -81,8 +85,22 @@ export class PlayController extends Controller {
                     cancelable: true,
                     composed: false,
                 });
-
                 window.dispatchEvent(discoveredEvent);
+            } else {
+                this.hiddenTimer = window.setTimeout(()=>{
+                    var event = new CustomEvent('hide-selected-card', {
+                        detail: {
+                        test: 9,
+                        },
+                        bubbles: true,
+                        cancelable: true,
+                        composed: false,
+                    });
+                    window.dispatchEvent(event);
+                    window.clearTimeout(this.hiddenTimer);
+                    this.hiddenTimer = null;
+                }, 800)
+
             }
         }
     }
