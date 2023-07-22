@@ -8,6 +8,7 @@
     flex-direction: column;
     background-color: var(--background-color);
     overflow: scroll;
+    margin-top: 65px;
 }
 
 .playView-cardsContainer{
@@ -23,7 +24,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    /*Única forma para ver el HUD con el flex position*/
+    margin-top: 180px;
 }
 
 .playView-text{
@@ -33,5 +35,4 @@ font-size: 25px;
 .playView-resetBtn{
     width: 130px;
     font-size: 25px;
-    background-color: ;
 }

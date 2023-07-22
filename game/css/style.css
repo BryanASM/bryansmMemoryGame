@@ -25,12 +25,12 @@ button{
 }
 
 .mainContainer{
-position: fixed;
-display: flex;
-flex-direction: column;
-background-color: var(--background-color);
-width: 100vw;
-height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    width: 100vw;
+    height: 100vh;
 }
 
 /*uso de variables para estilos de css, se declaran en el root*/
@@ -66,7 +66,7 @@ height: 100vh;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    z-index: 100;
+    z-index: 30;
 }
 
 /*.navigationContainer-content{
