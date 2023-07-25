@@ -5,12 +5,22 @@
     --secondary-color-dark: #c23e37;
     --secondary-color: #FF5349;
     --secondary-color-light: #fb6d66;
+    --tertiary-color: #4F80E1;
+    --tertiary-color-light: rgb(101, 174, 242);
+    --tertiary-color-dark: #3c6fd6d4;
     --background-color:#18CDCA;
+    --background-color-light: #1eede9;
     --navigationContainer-height:60px;
     --fade-color:rgb(0,0,0,0);
 }
 
-*{padding:0; margin:0;font-family: Arial, Helvetica, sans-serif; }
+@font-face {
+    font-family: 'customFont';
+    src: url('..//media/rimouski\ sb.otf') format('truetype');
+}
+
+*{padding:0; margin:0; font-family:'customFont'; }
+
 
 
 button{

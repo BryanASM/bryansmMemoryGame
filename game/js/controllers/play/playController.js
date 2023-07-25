@@ -33,8 +33,7 @@ export class PlayController extends Controller {
     }
 
     resetGame() {
-        window.clearInterval(this.timer);
-        this.timer = null;
+        this.killGameTimer();
         this.time = 0;
         this.clicks = 0;
         this.service.getCards(this.gameManager.difficulty, this.gameManager.theme);
@@ -50,6 +49,8 @@ export class PlayController extends Controller {
 
         if(this.hiddenTimer !== null) return;
 
+        this.clicks +=1;
+        this.view.updateHUD(this.clicks, this.time);
         var event = new CustomEvent('show-card-on-selected', {
             detail: {
                 test: 9,
@@ -68,7 +69,6 @@ export class PlayController extends Controller {
             if (!card.isDiscovered) {
                 if (cardSelected1 === null && card.isSelected) {
                     cardSelected1 = card;
-                    console.log(card);
                 } else if (cardSelected2 === null && card.isSelected) {
                     cardSelected2 = card;
                 }
@@ -77,7 +77,7 @@ export class PlayController extends Controller {
 
         if (cardSelected1 !== null && cardSelected2 !== null) {
             if (cardSelected1.id === cardSelected2.id) {
-                var discoveredEvent = new CustomEvent('show-card-on-discovered', {
+                var event = new CustomEvent('show-card-on-discovered', {
                     detail: {
                         card: null,
                     },
@@ -85,7 +85,15 @@ export class PlayController extends Controller {
                     cancelable: true,
                     composed: false,
                 });
-                window.dispatchEvent(discoveredEvent);
+
+                this.view.container.dispatchEvent(event);
+
+                if (this.checkGameComplete()) {
+                    this.killGameTimer();
+                    let score = this.clicks + this.time;
+                    this.service.sendScore(score, this.clicks, this.timer, this.gameManager.username);
+                    console.log('YOU WIN!')
+                }
             } else {
                 this.hiddenTimer = window.setTimeout(()=>{
                     var event = new CustomEvent('hide-selected-card', {
@@ -103,5 +111,19 @@ export class PlayController extends Controller {
 
             }
         }
+    }
+    killGameTimer() {
+        window.clearInterval(this.timer);
+        this.timer = null;
+    }
+
+    checkGameComplete(){
+        for (let i = 0; i < this.cards.length; i++) {
+            const card = this.cards[i];
+            if (!card.isDiscovered) {
+                return false;
+            }
+        }
+        return true;
     }
 }

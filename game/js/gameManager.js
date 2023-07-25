@@ -12,7 +12,7 @@ export class GameManager{
     constructor(){
         this.difficulty = DIFFICULTY_MEDIUM;
         this.theme = THEMES_FOOD;
-
+        this.username = '';
         this.controller = null;
         this.contentContainer = document.getElementById('contentContainer');
         this.navigationContainer = document.getElementById('navigationContainer');
