@@ -1,4 +1,5 @@
 import { Controller } from "../controller.js";
+import { ScoresService } from "./scoresService.js";
 import { ScoresView } from "./scoresView.js";
 
 export  class ScoresController extends Controller{
@@ -11,5 +12,12 @@ export  class ScoresController extends Controller{
         //Se crea un view del gameManager, por eso se declara con this
         //Al 
         this.view = new ScoresView(this, parent);
+        this.service = new ScoresService(this);
+        this.service.getScores();
+        this.scores = [];
+    }
+
+    showScores(scores){
+        console.log(scores);
     }
 }
