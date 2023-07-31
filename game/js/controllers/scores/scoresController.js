@@ -18,6 +18,7 @@ export  class ScoresController extends Controller{
     }
 
     showScores(scores){
-        console.log(scores);
+        this.scores = scores;
+        this.view.showScores(this.scores);
     }
 }

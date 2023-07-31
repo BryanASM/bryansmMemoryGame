@@ -1,4 +1,5 @@
 import { ControllerView } from "../controllerView.js";
+import { ScoreView } from "./scoreView.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
 export class ScoresView extends ControllerView {
     //Recibe controller
@@ -8,4 +9,11 @@ export class ScoresView extends ControllerView {
         super(controller, parent);
         this.elementsContainer.className = 'scoresView';
     }
+
+        showScores(scores){
+        scores.forEach(score => {
+            let scoreView = new ScoreView(this.elementsContainer, score);
+        })
+    }
+
 }
