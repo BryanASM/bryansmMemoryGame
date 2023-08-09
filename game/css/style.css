@@ -1,4 +1,4 @@
-:root{
+:root {
     --primary-color-dark: #181a27;
     --primary-color: #292C44;
     --primdary-color-light: #404469;
@@ -8,11 +8,12 @@
     --tertiary-color: #4F80E1;
     --tertiary-color-light: rgb(101, 174, 242);
     --tertiary-color-dark: #3c6fd6d4;
-    --background-color:#18CDCA;
+    --background-color: #18CDCA;
     --background-color-light: #1eede9;
-    --light-color:#f0f0f1;
-    --navigationContainer-height:60px;
-    --fade-color:rgb(0,0,0,0);
+    --light-color: #f0f0f1;
+    --navigationContainer-height: 60px;
+    --fade-color: rgb(0, 0, 0, 0);
+
 }
 
 @font-face {
@@ -20,11 +21,15 @@
     src: url('..//media/rimouski\ sb.otf') format('truetype');
 }
 
-*{padding:0; margin:0; font-family:'customFont'; }
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'customFont';
+}
 
 
 
-button{
+button {
     min-width: 60px;
     border-style: none;
     padding: 10px 10px 10px 10px;
@@ -35,22 +40,24 @@ button{
     outline: none;
 }
 
-.mainContainer{
+.mainContainer {
     position: fixed;
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
+    background-image: url("../media/liquid-cheese.svg");
+    background-size: cover;
     width: 100vw;
     height: 100vh;
 }
 
 /*uso de variables para estilos de css, se declaran en el root*/
-.contentContainer{
+.contentContainer {
     width: 100%;
     height: calc(100% - var(--navigationContainer-height));
 }
 
-.game-button{
+.game-button {
     height: 50px;
     width: 60%;
     background-color: var(--secondary-color);
@@ -59,16 +66,33 @@ button{
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-top: 10px;
     cursor: pointer;
     user-select: none;
-    color:white
+    color: var(--light-color);
+    max-width: 300px;
+}
+
+.game-button-duo {
+    height: 50px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: white
 }
 
 /*navigation container css*/
 
-.navigationContainer{
+.navigationContainer {
     position: fixed;
     background-color: var(--primary-color);
     width: 100%;
@@ -77,7 +101,7 @@ button{
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    z-index: 30;
+    z-index: 60;
 }
 
 /*.navigationContainer-content{
@@ -89,7 +113,7 @@ button{
     align-items: center;
 }*/
 
-.navigationContainer-back-button{
+.navigationContainer-back-button {
     position: fixed;
     font-size: 30px;
     font-weight: bold;
@@ -99,7 +123,7 @@ button{
     user-select: none;
 }
 
-.navigationContainer-title{
+.navigationContainer-title {
     font-size: 30px;
     font-weight: bold;
     width: 100%;
@@ -107,7 +131,6 @@ button{
     color: aliceblue;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
- 
