@@ -24,11 +24,11 @@
 }
 
 .cardView-hidden {
-    background-color: rgb(101, 174, 242);
+    background-color: var(--tertiary-color-light);
 }
 
 .cardView-selected {
-    background-color: #4F80E1;
+    background-color: var(--background-color-light);
 }
 
 .cardView-discovered {

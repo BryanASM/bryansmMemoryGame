@@ -4,11 +4,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    width: 80%;
-    background-color: var(--tertiary-color-light);
-    margin-top: 30px;
-    border-radius: 6px;
+    width: 70%;
+    background-color: var(--primary-color);
+    border-radius: 9px;
+    border-style: groove;
+    border-color: var(--secondary-color);
+    border-width: 6px;
+    margin-top: 70px;
+    margin-bottom: 10px;
 }
 
 .scoreView-nameContainer {
@@ -16,7 +19,7 @@
     justify-content: center;
     align-items: center;
     height: 100px;
-    color: var(--primary-color-light);
+    color: var(--light-color);
     font-size: 40px;
 }
 
@@ -37,11 +40,11 @@
 }
 
 .scoreView-value-title {
-    color: var(--primary-color-dark);
-    font-size: 40px;
+    color: var(--light-color);
+    font-size: 15px;
 }
 
 .scoreView-value-description {
-    color: var(--light-color);
+    color: var(--background-color);
     font-size: 40px;
 }

@@ -8,6 +8,7 @@
     --tertiary-color: #4F80E1;
     --tertiary-color-light: rgb(101, 174, 242);
     --tertiary-color-dark: #3c6fd6d4;
+    --background-color-dark: #17a19f;
     --background-color: #18CDCA;
     --background-color-light: #1eede9;
     --light-color: #f0f0f1;
@@ -103,15 +104,6 @@ button {
     flex-direction: row;
     z-index: 60;
 }
-
-/*.navigationContainer-content{
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}*/
 
 .navigationContainer-back-button {
     position: fixed;
