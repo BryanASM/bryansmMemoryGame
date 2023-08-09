@@ -1,4 +1,4 @@
-.cardView{
+.cardView {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@
     border-radius: 6px;
 }
 
-.cardView-container{
+.cardView-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,16 +20,17 @@
     width: 100px;
     height: 120px;
     margin-top: 30px;
-    margin-bottom: 90px;
     border-radius: 6px;
 }
 
 .cardView-hidden {
     background-color: rgb(101, 174, 242);
 }
+
 .cardView-selected {
     background-color: #4F80E1;
 }
+
 .cardView-discovered {
     background-color: #FF5349;
 }

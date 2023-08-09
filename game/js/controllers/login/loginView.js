@@ -1,4 +1,4 @@
-import { div, input } from "../../libs/html.js";
+import { div, input, p } from "../../libs/html.js";
 import { ControllerView } from "../controllerView.js";
 //Extiende el view porque hay lógica que se repite, relación de herencia para reciclar código
 export class LoginView extends ControllerView {
@@ -9,7 +9,9 @@ export class LoginView extends ControllerView {
         super(controller, parent);
         this.elementsContainer.className = 'loginView';
 
-        this.usernameIn = input({ placeholder: ' Username', className: 'loginView-usernameIn' }, this.elementsContainer);
+        this.usernameTitle = p({ innerHTML: 'Username', className: 'usernameTitle' }, this.elementsContainer);
+
+        this.usernameIn = input({ placeholder: ' Enter your username', className: 'loginView-usernameIn' }, this.elementsContainer);
 
         this.okBtn = div({ innerHTML: 'LOGIN', className: 'game-button', onclick: this.onOkBtn.bind(this) }, this.elementsContainer);
     }

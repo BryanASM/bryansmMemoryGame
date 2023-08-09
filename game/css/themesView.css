@@ -1,4 +1,4 @@
-.themesView{
+.themesView {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -7,4 +7,6 @@
     justify-content: center;
     flex-direction: column;
     background-color: var(--background-color);
+    background-image: url("../media/liquid-cheese.svg");
+    background-size: cover;
 }

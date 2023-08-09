@@ -7,5 +7,7 @@
     /*justify-content: center;*/
     flex-direction: column;
     background-color: var(--background-color);
+    background-image: url("../media/liquid-cheese.svg");
+    background-size: cover;
     overflow: scroll;
 }

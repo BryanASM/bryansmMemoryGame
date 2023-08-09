@@ -1,6 +1,7 @@
 .playView-elementsContainer {
     width: 100%;
-    height: calc(var);
+    height: 100%;
+
     position: fixed;
     display: flex;
     align-items: center;
@@ -10,7 +11,7 @@
     background-image: url("../media/liquid-cheese.svg");
     background-size: cover;
     overflow: scroll;
-    /*margin-top: 40px;*/
+    /*padding-top: 60px;*/
 }
 
 .playView-cardsContainer {
@@ -19,6 +20,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 900px;
+    min-width: 405px
 }
 
 .playView-hudContainer {
@@ -27,7 +30,7 @@
     justify-content: space-between;
     align-items: center;
     /*Única forma para ver el HUD con el flex position*/
-    margin-top: 60px;
+    padding-top: 60px;
 }
 
 .playView-text {
