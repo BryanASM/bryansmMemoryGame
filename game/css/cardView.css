@@ -2,9 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 60px;
-    border-color: #FF5349;
+    border-color: var(--background-color);
     border-width: 2px;
     border-style: solid;
     width: 80px;
@@ -24,13 +23,13 @@
 }
 
 .cardView-hidden {
-    background-color: var(--tertiary-color-light);
+    background-color: var(--secondary-color);
 }
 
 .cardView-selected {
-    background-color: var(--background-color-light);
+    background-color: var(--background-color);
 }
 
 .cardView-discovered {
-    background-color: #FF5349;
+    background-color: var(--primary-color-light);
 }

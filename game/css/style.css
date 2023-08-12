@@ -73,6 +73,7 @@ button {
     user-select: none;
     color: var(--light-color);
     max-width: 300px;
+    min-width: 195px;
 }
 
 .game-button-duo {

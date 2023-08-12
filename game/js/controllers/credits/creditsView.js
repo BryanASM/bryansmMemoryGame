@@ -12,5 +12,10 @@ export class CreditsView extends ControllerView {
         p({ innerHTML: 'Project lead: Esteban Padilla', className: 'creditsParagraphs' }, this.elementsContainer);
         p({ innerHTML: 'Code: Bryan Sanabria', className: 'creditsParagraphs' }, this.elementsContainer);
         p({ innerHTML: 'Design: Bryan Sanabria', className: 'creditsParagraphs' }, this.elementsContainer);
+        p({ innerHTML: 'Technologies used:', className: 'creditsParagraphs' }, this.elementsContainer);
+        p({ innerHTML: 'JavaScript', className: 'creditsParagraphs' }, this.elementsContainer);
+        p({ innerHTML: 'Firebase', className: 'creditsParagraphs' }, this.elementsContainer);
+        p({ innerHTML: 'Gulp', className: 'creditsParagraphs' }, this.elementsContainer);
+        p({ innerHTML: 'Otra que se me olvida', className: 'creditsParagraphs' }, this.elementsContainer);
     }
 }

@@ -1,5 +1,5 @@
 .homeView-logo {
-    max-height: 40%;
+    max-height: 35%;
 }
 
 .menuView-elementsContainer {
@@ -26,4 +26,5 @@
     gap: 30%;
     justify-content: space-between;
     max-width: 300px;
+    min-width: 195px;
 }

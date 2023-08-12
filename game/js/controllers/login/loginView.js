@@ -15,6 +15,7 @@ export class LoginView extends ControllerView {
 
         this.okBtn = div({ innerHTML: 'LOGIN', className: 'game-button', onclick: this.onOkBtn.bind(this) }, this.elementsContainer);
     }
+
     onOkBtn() {
         let username = this.usernameIn.value;
 
@@ -29,7 +30,6 @@ export class LoginView extends ControllerView {
             });
             this.container.dispatchEvent(event);
         } else {
-
         }
     }
     //this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)` 
