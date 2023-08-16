@@ -76,6 +76,13 @@ button {
     min-width: 195px;
 }
 
+.game-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 5);
+    background-color: var(--background-color-light);
+    color: var(--primary-color-dark);
+}
+
 .game-button-duo {
     height: 50px;
     width: 100%;
@@ -89,7 +96,14 @@ button {
     margin-top: 10px;
     cursor: pointer;
     user-select: none;
-    color: white
+    color: var(--light-color)
+}
+
+.game-button-duo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 5);
+    background-color: var(--background-color-light);
+    color: var(--primary-color-dark);
 }
 
 /*navigation container css*/

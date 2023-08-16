@@ -10,9 +10,7 @@ export class LoginView extends ControllerView {
         this.elementsContainer.className = 'loginView';
 
         this.usernameTitle = p({ innerHTML: 'Username', className: 'usernameTitle' }, this.elementsContainer);
-
         this.usernameIn = input({ placeholder: ' Enter your username', className: 'loginView-usernameIn' }, this.elementsContainer);
-
         this.okBtn = div({ innerHTML: 'LOGIN', className: 'game-button', onclick: this.onOkBtn.bind(this) }, this.elementsContainer);
     }
 
@@ -32,6 +30,4 @@ export class LoginView extends ControllerView {
         } else {
         }
     }
-    //this.elementsContainer.style.transform = `translateX(${window.innerWidth}px)` 
-
 }

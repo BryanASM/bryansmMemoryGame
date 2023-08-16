@@ -22,8 +22,6 @@ export class GameManager {
 
         this.MenuController = new MenuController(this, this.contentContainer);
 
-        //console.dir(this.contentContainer);
-
         this.contentContainer.addEventListener('menu-button-click', (event) => {
             this.presenting(event.detail.state);
         });
@@ -34,10 +32,12 @@ export class GameManager {
         this.contentContainer.addEventListener('save-difficulty', (event) => {
             this.difficulty = event.detail.difficulty;
             this.saveDifficulty();
+            this.goto(PLAY_STATE);
         });
         this.contentContainer.addEventListener('save-theme', (event) => {
             this.theme = event.detail.theme;
             this.saveTheme();
+            this.goto(PLAY_STATE);
         });
 
         this.contentContainer.addEventListener('username-entered', (event) => {
