@@ -5,6 +5,7 @@ const port = 3000;
 
 app.use(cors());
 
+
 app.get('/cards/:difficulty/:theme', (request, response) => {
     if (request.params !== null) {
         if (request.params.difficulty !== null && request.params.type !== null) {
