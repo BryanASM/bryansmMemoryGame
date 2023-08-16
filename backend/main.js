@@ -14,7 +14,7 @@ app.get('/cards/:difficulty/:theme', (request, response) => {
             console.log(difficulty);
         }
     }
-
+    
     response.send(cards);
 });
 
