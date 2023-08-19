@@ -47,9 +47,9 @@ export class PlayController extends Controller {
 
     onCardSelected() {
 
-        if(this.hiddenTimer !== null) return;
+        if (this.hiddenTimer !== null) return;
 
-        this.clicks +=1;
+        this.clicks += 1;
         this.view.updateHUD(this.clicks, this.time);
         var event = new CustomEvent('show-card-on-selected', {
             detail: {
@@ -92,13 +92,13 @@ export class PlayController extends Controller {
                     this.killGameTimer();
                     let score = this.clicks + this.time;
                     this.service.sendScore(score, this.clicks, this.timer, this.gameManager.username);
-                    console.log('YOU WIN!')
+                    console.log('YOU WIN!');
                 }
             } else {
-                this.hiddenTimer = window.setTimeout(()=>{
+                this.hiddenTimer = window.setTimeout(() => {
                     var event = new CustomEvent('hide-selected-card', {
                         detail: {
-                        test: 9,
+                            test: 9,
                         },
                         bubbles: true,
                         cancelable: true,
@@ -117,7 +117,7 @@ export class PlayController extends Controller {
         this.timer = null;
     }
 
-    checkGameComplete(){
+    checkGameComplete() {
         for (let i = 0; i < this.cards.length; i++) {
             const card = this.cards[i];
             if (!card.isDiscovered) {

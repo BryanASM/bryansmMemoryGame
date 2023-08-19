@@ -27,7 +27,7 @@
     width: 50%;
     background-color: var(--primary-color);
     border-radius: 9px;
-    border-style: groove;
+    border-style: solid;
     border-color: var(--secondary-color);
     border-width: 6px;
     padding-top: 15px;

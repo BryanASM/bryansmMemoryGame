@@ -9,4 +9,5 @@
     background-size: cover;
     overflow: scroll;
     top: var(--navigationContainer-height);
+    padding-top: 15px;
 }

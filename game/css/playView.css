@@ -39,3 +39,18 @@
     width: 130px;
     font-size: 25px;
 }
+
+.youWin {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    background-color: var(--primary-color);
+    border-radius: 9px;
+    border-style: groove;
+    border-color: var(--secondary-color);
+    border-width: 6px;
+    margin-bottom: 10px;
+}
