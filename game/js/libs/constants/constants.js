@@ -13,5 +13,6 @@ export const DIFFICULTY_HARD = 8;
 export const THEMES_FACES = 'faces';
 export const THEMES_FOOD = 'food';
 export const THEMES_FLAGS = 'flags';
+export const THEMES_ANIMALS = 'animals';
 
 //para administrar en que estado va a estar la aplicacion

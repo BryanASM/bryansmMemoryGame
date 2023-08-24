@@ -1,0 +1,26 @@
+.winScreen {
+    width: 40%;
+    height: 40%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+}
+
+.winContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    background-color: var(--primary-color);
+    border-radius: 9px;
+    border-style: solid;
+    border-color: var(--secondary-color);
+    border-width: 6px;
+    padding-top: 15px;
+    min-width: 175.5px;
+}

@@ -7,15 +7,28 @@ app.use(cors());
 
 
 app.get('/cards/:difficulty/:theme', (request, response) => {
+
+    var cards = [];
+
     if (request.params !== null) {
-        if (request.params.difficulty !== null && request.params.type !== null) {
+        if (request.params.difficulty !== null && request.params.theme !== null) {
             const difficulty = request.params.difficulty;
-            const type = request.params.difficulty.type;
+            const theme = request.params.theme;
             console.log(difficulty);
+
+
+            for (let i = 0; i < difficulty; i++) {
+                cards.push({
+                    "isDiscovered": false,
+                    "icon": getIcon(),
+                    "id": (i + 1)
+                });
+            }
+
         }
     }
-    
-    response.send(cards);
+
+    response.send(JSON.stringify(cards));
 });
 
 app.get('/scores', (request, response) => {
@@ -27,6 +40,10 @@ app.get('/scores', (request, response) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
+
+function getIcon() {
+    return food[0];
+}
 
 var cards = `
 {
