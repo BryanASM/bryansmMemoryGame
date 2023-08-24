@@ -16,7 +16,7 @@ export class ThemesView extends ControllerView {
 
         div({ innerHTML: 'FLAGS', className: 'game-button', onclick: this.onButtonCLick.bind(this, THEMES_FLAGS) }, this.elementsContainer);
 
-        div({ innerHTML: 'ANIMALS', className: 'game-button', onclick: this.onButtonCLick.bind(this, THEMES_ANIMALS) }, this.elementsContainer);
+        //div({ innerHTML: 'ANIMALS', className: 'game-button', onclick: this.onButtonCLick.bind(this, THEMES_ANIMALS) }, this.elementsContainer);
 
     }
     onButtonCLick(theme) {
